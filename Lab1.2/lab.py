@@ -17,8 +17,11 @@ act_sun = list(map(getvalue, val_d ))
 temp = list(map(getvalue, val_c ))
 
 
-pyplot.plot(years, act_sun)
-pyplot.plot(years, temp)
+# "a is %d, b is %2d" % (a,b)  pattern format
+
+
+pyplot.plot(years, act_sun, 'r--')
+pyplot.plot(years, temp, 'g-.')
 pyplot.show()
 
 
