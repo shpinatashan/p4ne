@@ -1,5 +1,6 @@
 
 
+
 import ipaddress
 import re
 import glob
@@ -45,6 +46,14 @@ for fl in list_files:
 print(result)
 print(list_host)
 
+str_all = ''
+for l in list_host:
+    str1 = '<a href="http://127.0.0.1:5000/configs/'+ l +'">' + l +'</a><br>'
+    str_all = str_all + str1
+print(str1)
+print(str_all)
+
+
 app = Flask(__name__)
 
 
@@ -56,7 +65,8 @@ def index():
 
 @app.route('/configs')
 def configs():
-    return jsonify(list_host)
+    return str_all
+    #return jsonify(list_host)
 
 
 @app.route('/configs/<hostname>')
@@ -66,4 +76,16 @@ def configs_hostname(hostname):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+
+
+
+
+
+
+
+
+
 
