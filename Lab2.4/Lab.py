@@ -38,7 +38,6 @@ r = s.get(host_url + api_url, headers=header, verify=False)
 
 #pprint.pprint(r.json())
 
-
 list_r = r.json()
 list_r = list_r['processes']
 sort_list = (sorted(list_r, key=lambda x: x['memory-used'],reverse=True))
@@ -56,7 +55,6 @@ app = Flask(__name__)
 @app.route('/index')
 def index():
     return "Welcome"
-
 
 @app.route('/memory')
 def configs():
